@@ -1,15 +1,22 @@
 <!-- l10n-sync: source-file="03-agent-mode.md" -->
-# Parte 3: Agent Mode — Construir el Juego
+# Parte 3: Construir el juego con flujos de trabajo agénticos
 
 ---
 
-Agent Mode permite a Copilot planificar e implementar cambios de forma autónoma en múltiples archivos. En lugar de escribir código línea por línea, describes lo que quieres y Copilot determina qué archivos crear o modificar, luego implementa todo de principio a fin.
+Esta parte es donde Copilot pasa de planificar a implementar. En lugar de escribir código línea por línea, describes lo que quieres y Copilot realiza el trabajo en los archivos que necesita modificar.
 
 ## Tarea 1: Conecta la Batalla
 
-1. Cambia a modo **Agent** en Copilot Chat (selecciona "Agent" en el menú desplegable de modo).
+<!-- track:vscode:start -->
+1. Cambia a modo **Agent** en Copilot Chat.
+2. Introduce este prompt:
+<!-- track:vscode:end -->
 
-2. Ingresa este prompt:
+<!-- track:cli:start -->
+1. Devuelve Copilot CLI a su flujo de programación normal (o mantente en autopilot si quieres que siga avanzando hasta que lo detengas).
+2. Si te sirve, menciona el archivo de la página para aportar contexto adicional: `@src/pages/index.astro`.
+3. Introduce este prompt:
+<!-- track:cli:end -->
 
    > Add client-side JavaScript to the battle page that:
    > 1. When the Battle button is clicked, gets both usernames from the inputs
@@ -23,9 +30,15 @@ Agent Mode permite a Copilot planificar e implementar cambios de forma autónoma
    >
    > Use TypeScript interfaces for the contribution data structure.
 
-3. Deja que Agent Mode trabaje en la implementación a través de `index.astro`. Observa cómo planifica su enfoque, identifica los archivos que necesita modificar y escribe el código.
-
+<!-- track:vscode:start -->
+3. Deja que Agent Mode implemente el cambio en `index.astro`.
 4. Revisa los cambios propuestos en la vista de diferencias antes de aceptarlos.
+<!-- track:vscode:end -->
+
+<!-- track:cli:start -->
+4. Deja que Copilot CLI implemente el cambio en `src/pages/index.astro`.
+5. Usa `/diff` para inspeccionar los cambios generados y apruébalos.
+<!-- track:cli:end -->
 
 ## Tarea 2: Prueba la Batalla
 
@@ -36,7 +49,7 @@ Agent Mode permite a Copilot planificar e implementar cambios de forma autónoma
    - Ingresa un nombre de usuario inválido — la app debería mostrar un error de la API.
 4. Prueba presionar **Enter** en cualquier campo de entrada — debería activar la batalla igual que al hacer clic en el botón.
 
-## Tarea 3: Itera con Agent
+## Tarea 3: Itera con Copilot
 
 Si algo no está del todo bien, dale retroalimentación a Agent directamente en el chat. Por ejemplo:
 
@@ -44,7 +57,13 @@ Si algo no está del todo bien, dale retroalimentación a Agent directamente en 
 - *"Add a hover tooltip showing the date and contribution count"*
 - *"The loading state needs a pulse animation"*
 
-Agent Mode maneja cambios en múltiples archivos e iteraciones de forma natural. Cada prompt de seguimiento se basa en el contexto previo, por lo que puedes refinar la implementación de forma incremental sin empezar de cero.
+<!-- track:vscode:start -->
+Agent Mode gestiona de forma natural los cambios en varios archivos y las iteraciones. Cada prompt de seguimiento se basa en la conversación anterior, así que puedes refinar la implementación sin empezar de cero.
+<!-- track:vscode:end -->
+
+<!-- track:cli:start -->
+Las sesiones de Copilot CLI conservan su historial, por lo que cada prompt de seguimiento se basa en el anterior. Usa `/session` o `/context` para consultar el contexto y `/review` después de una iteración importante si quieres una revisión adicional de errores o pulido.
+<!-- track:cli:end -->
 
 ## Consejos para Agent Mode
 
@@ -57,6 +76,6 @@ Agent Mode maneja cambios en múltiples archivos e iteraciones de forma natural.
 
 Has aprendido a:
 
-- Usar **Agent Mode** para implementaciones complejas en múltiples archivos
-- **Iterar sobre los resultados** con retroalimentación dirigida
-- Manejar el **ciclo de vida completo de una funcionalidad** — desde la implementación hasta las pruebas y el refinamiento — en una sola conversación
+- Usar Copilot para **implementar funcionalidades en varios archivos**
+- **Iterar sobre los resultados** con prompts de seguimiento concretos
+- Gestionar el **ciclo completo de una funcionalidad** — implementación, revisión, pruebas y refinamiento

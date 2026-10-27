@@ -130,9 +130,9 @@ Si quieres explorar más funcionalidades de Copilot CLI después del taller prin
 - Usa `/session` y `/session plan` para inspeccionar cómo el CLI está rastreando tu trabajo actual.
 <!-- track:cli:end -->
 
-## �� ¡Felicitaciones!
+## 🎊 ¡Felicidades!
 
-¡Has completado el taller **Mona Mayhem: GitHub Battle**! Esto es lo que lograste:
+¡Has completado el taller **Mona Mayhem: GitHub Battle**! Esto es lo que has conseguido:
 
 ### Lo Que Construiste
 

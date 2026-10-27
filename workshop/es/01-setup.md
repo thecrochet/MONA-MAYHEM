@@ -1,5 +1,5 @@
 <!-- l10n-sync: source-file="workshop/01-setup.md" -->
-# Parte 1: Configuración y Context Engineering
+# Parte 1: Configuración e ingeniería de contexto
 
 ---
 
@@ -7,7 +7,7 @@ En esta parte configurarás tu entorno de desarrollo **y** enseñarás a Copilot
 
 ## Sección 1: Configuración Inicial
 
-### Paso 1: Crea Tu Repositorio
+### Paso 1: Crea tu repositorio
 
 1. Abre [github.com/copilot-dev-days/mona-mayhem](https://github.com/copilot-dev-days/mona-mayhem)
 2. Crea tu propio repositorio mediante una de estas opciones:
@@ -16,7 +16,7 @@ En esta parte configurarás tu entorno de desarrollo **y** enseñarás a Copilot
 3. Nómbralo `my-mona-mayhem` y establece la visibilidad como **Public** (si lo creaste desde la plantilla)
 
 <!-- track:vscode:start -->
-### Paso 2: Elige Tu Entorno de Desarrollo
+### Paso 2: Elige tu entorno de desarrollo
 
 #### Opción A: VS Code Local
 
@@ -30,7 +30,7 @@ En esta parte configurarás tu entorno de desarrollo **y** enseñarás a Copilot
 2. Haz clic en **Code** → **Codespaces** → **Create codespace on main**
 3. Espera a que el entorno inicie y las dependencias se instalen
 
-### Paso 3: Instala las Dependencias e Inicia la Aplicación
+### Paso 3: Instala las dependencias e inicia la aplicación
 
 1. Abre la terminal integrada en tu repositorio.
 2. Instala las dependencias:
@@ -71,7 +71,7 @@ Usa la ruta de instalación que corresponda a tu máquina:
   winget install GitHub.Copilot
   ```
 
-### Paso 3: Inicia la Aplicación y Autentica el CLI
+### Paso 3: Inicia la aplicación y autentica la CLI
 
 1. Clona tu repositorio localmente y abre una terminal en la raíz del proyecto.
 2. Instala las dependencias e inicia la aplicación:
@@ -98,12 +98,12 @@ Usa la ruta de instalación que corresponda a tu máquina:
 > ✅ **Ahora tienes la vista previa de la aplicación en una terminal y Copilot CLI listo en otra.**
 <!-- track:cli:end -->
 
-## Sección 2: Context Engineering
+## Sección 2: Ingeniería de contexto
 
-Context Engineering es cómo enseñas a la IA sobre tu código base. Cuanto mejor sea el contexto, mejor será cada respuesta futura.
+La ingeniería de contexto es la forma de enseñar a la IA cómo es tu código base. Cuanto mejor sea el contexto, mejores serán las respuestas futuras.
 
 <!-- track:vscode:start -->
-### Tarea 1: Genera Instrucciones del Workspace con /init
+### Tarea 1: Genera instrucciones del workspace con /init
 
 Usemos el comando integrado `/init` para generar un archivo de instrucciones del workspace para Copilot:
 
@@ -114,24 +114,27 @@ Usemos el comando integrado `/init` para generar un archivo de instrucciones del
    ```
 
 2. Revisa el archivo generado — Copilot analizará tu proyecto y creará un `.github/copilot-instructions.md`.
-3. Acepta los cambios, luego **haz commit** del archivo de instrucciones.
+3. Acepta los cambios y haz commit del archivo de instrucciones.
 
 > **Resultado:** Todas las futuras solicitudes a Copilot ahora tienen un mapa de tu workspace incorporado.
 
-### Tarea 2: Agentes en Segundo Plano
+### Tarea 2: Agentes en segundo plano
 
 **Agente en segundo plano local:**
 
-1. En el panel de Chat, haz clic en **+** → **New background agent**
-2. Ingresa el prompt:
+1. En el panel de Chat, haz clic en **+** para abrir un chat nuevo.
+2. En la parte inferior de la ventana, cambia **Local** a **Copilot CLI**.
+3. Introduce el prompt:
 
    > "Add linting rules for unused vars and improve code style; fix any errors"
 
-3. Cuando termine, **Revisa y Aplica** los cambios, luego elimina la sesión.
+4. Cuando termine, **revisa y aplica** los cambios; después, archiva la sesión si quieres.
 
 **Agente en la nube:**
 
-1. Inicia otro agente en segundo plano con:
+1. En el panel de Chat, haz clic en **+** para abrir un chat nuevo.
+2. En la parte inferior de la ventana, cambia **Local** a **Cloud**.
+3. Introduce el prompt:
 
    > "Make the README more engaging as a landing page"
 

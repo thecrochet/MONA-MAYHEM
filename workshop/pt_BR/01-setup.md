@@ -1,13 +1,13 @@
 <!-- l10n-sync: source-file="workshop/01-setup.md" -->
-# Parte 1: Configuração e Context Engineering
+# Parte 1: Configuração e engenharia de contexto
 
 ---
 
 Nesta parte você vai configurar seu ambiente de desenvolvimento **e** ensinar o Copilot sobre a base de código — para que cada prompt futuro comece com o contexto adequado.
 
-## Seção 1: Configuração Inicial
+## Seção 1: Configuração inicial
 
-### Passo 1: Crie Seu Repositório
+### Passo 1: Crie seu repositório
 
 1. Abra [github.com/copilot-dev-days/mona-mayhem](https://github.com/copilot-dev-days/mona-mayhem)
 2. Crie seu próprio repositório por uma destas opções:
@@ -16,7 +16,7 @@ Nesta parte você vai configurar seu ambiente de desenvolvimento **e** ensinar o
 3. Nomeie-o como `my-mona-mayhem` e defina a visibilidade como **Public** (se criou a partir do template)
 
 <!-- track:vscode:start -->
-### Passo 2: Escolha Seu Ambiente de Desenvolvimento
+### Passo 2: Escolha seu ambiente de desenvolvimento
 
 #### Opção A: VS Code Local
 
@@ -30,7 +30,7 @@ Nesta parte você vai configurar seu ambiente de desenvolvimento **e** ensinar o
 2. Clique em **Code** → **Codespaces** → **Create codespace on main**
 3. Aguarde o ambiente iniciar e as dependências serem instaladas
 
-### Passo 3: Instale as Dependências e Inicie o Aplicativo
+### Passo 3: Instale as dependências e inicie o app
 
 1. Abra o terminal integrado no seu repositório.
 2. Instale as dependências:
@@ -45,7 +45,7 @@ Nesta parte você vai configurar seu ambiente de desenvolvimento **e** ensinar o
    npm run dev
    ```
 
-> ✅ **O aplicativo está rodando no seu navegador!**
+> ✅ **O app está rodando no seu navegador!**
 <!-- track:vscode:end -->
 
 <!-- track:cli:start -->
@@ -71,7 +71,7 @@ Use o caminho de instalação que corresponde à sua máquina:
   winget install GitHub.Copilot
   ```
 
-### Passo 3: Inicie o Aplicativo e Autentique o CLI
+### Passo 3: Inicie o app e autentique o CLI
 
 1. Clone seu repositório localmente e abra um terminal na raiz do projeto.
 2. Instale as dependências e inicie o aplicativo:
@@ -98,12 +98,12 @@ Use o caminho de instalação que corresponde à sua máquina:
 > ✅ **Agora você tem a pré-visualização do aplicativo em um terminal e o Copilot CLI pronto em outro.**
 <!-- track:cli:end -->
 
-## Seção 2: Context Engineering
+## Seção 2: Engenharia de contexto
 
-Context Engineering é como você ensina a IA sobre sua base de código. Quanto melhor o contexto, melhor será cada resposta futura.
+A engenharia de contexto é como você ensina a IA sobre sua base de código. Quanto melhor o contexto, melhor será cada resposta futura.
 
 <!-- track:vscode:start -->
-### Tarefa 1: Gere Instruções do Workspace com /init
+### Tarefa 1: Gere instruções do workspace com /init
 
 Vamos usar o comando integrado `/init` para gerar um arquivo de instruções do workspace para o Copilot:
 
@@ -118,26 +118,28 @@ Vamos usar o comando integrado `/init` para gerar um arquivo de instruções do 
 
 > **Resultado:** Todas as futuras solicitações ao Copilot agora têm um mapa do seu workspace incorporado.
 
-### Tarefa 2: Agentes em Segundo Plano
+### Tarefa 2: Agentes em segundo plano
 
 **Agente em segundo plano local:**
 
-1. No painel de Chat, clique em **+** → **New background agent**
-2. Digite o prompt:
+1. No painel de Chat, clique em **+** para iniciar um novo chat
+2. Na parte inferior da janela, altere **Local** para **Copilot CLI**
+3. Digite o prompt:
 
    > "Add linting rules for unused vars and improve code style; fix any errors"
 
-3. Quando terminar, **Revise e Aplique** as alterações, depois delete a sessão.
+4. Quando terminar, **Revise e aplique** as alterações; depois arquive a sessão, se quiser.
 
 **Agente na nuvem:**
 
-1. Inicie outro agente em segundo plano com:
+1. No painel de Chat, clique em **+** para iniciar um novo chat
+2. Na parte inferior da janela, altere **Local** para **Cloud**
 
    > "Make the README more engaging as a landing page"
 
 > **Resultado:** Regras de linting adicionadas, erros corrigidos, README melhorado — tudo sem sair do seu editor.
 
-### Tarefa 3: Explore o Projeto
+### Tarefa 3: Explore o projeto
 
 Abra o **Copilot Chat** no **modo Ask** e experimente estes prompts:
 
@@ -149,7 +151,7 @@ Abra o **Copilot Chat** no **modo Ask** e experimente estes prompts:
 <!-- track:vscode:end -->
 
 <!-- track:cli:start -->
-### Tarefa 1: Gere Instruções do Repositório com /init
+### Tarefa 1: Gere instruções do repositório com /init
 
 Vamos usar `/init` para gerar um arquivo de instruções do workspace para o Copilot:
 
@@ -164,7 +166,7 @@ Vamos usar `/init` para gerar um arquivo de instruções do workspace para o Cop
 
 > **Resultado:** As sessões futuras do CLI herdam automaticamente as instruções específicas do repositório a partir de `.github/copilot-instructions.md`.
 
-### Tarefa 2: Configure Seu Ambiente CLI
+### Tarefa 2: Configure seu ambiente CLI
 
 Pratique os controles do CLI que facilitarão os passos posteriores:
 
@@ -180,7 +182,7 @@ Pratique os controles do CLI que facilitarão os passos posteriores:
 
 > 💡 A documentação do CLI recomenda instruções personalizadas concisas mais permissões de ferramentas explícitas para que o Copilot se mantenha rápido e previsível.
 
-### Tarefa 3: Explore o Projeto pelo Terminal
+### Tarefa 3: Explore o projeto pelo terminal
 
 Experimente estes prompts dentro do Copilot CLI:
 
@@ -197,7 +199,7 @@ copilot -p "Summarize the architecture of this repo in 5 bullet points"
 > **Resultado:** Agora você tem instruções, conhecimento de comandos e uma noção de como alimentar arquivos no contexto do Copilot CLI.
 <!-- track:cli:end -->
 
-## ✅ Parte 1 Completa
+## ✅ Parte 1 concluída
 
 Você aprendeu como:
 
